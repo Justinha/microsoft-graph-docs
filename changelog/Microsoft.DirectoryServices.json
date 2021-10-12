@@ -6,6 +6,14 @@
        {
          "Id": "5ac1044f-93d1-4fe7-aa57-ce514720bf27",
          "ApiChange": "Property",
+         "ChangedApiName": "licenseassignmentstate",
+         "ChangeType": "Addition",
+         "Description": "Added the **lastUpdatedDateTime** property to the [licenseAssignmentState](https://docs.microsoft.com/graph/api/resources/licenseassignmentstate?view=graph-rest-1.0) resource.",
+         "Target": "application"
+       },
+       {
+         "Id": "5ac1044f-93d1-4fe7-aa57-ce514720bf27",
+         "ApiChange": "Property",
          "ChangedApiName": "defaultRedirectUri",
          "ChangeType": "Addition",
          "Description": "Added the **defaultRedirectUri** property to the [application](https://docs.microsoft.com/en-us/graph/api/resources/application?view=graph-rest-beta) resource.",
