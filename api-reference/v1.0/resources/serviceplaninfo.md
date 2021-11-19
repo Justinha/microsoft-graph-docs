@@ -39,6 +39,7 @@ Here is a JSON representation of the resource
 {
   "appliesTo": "string",
   "provisioningStatus": "string",
+  "errorStatus": "string",
   "servicePlanId": "guid",
   "servicePlanName": "string"
 }
