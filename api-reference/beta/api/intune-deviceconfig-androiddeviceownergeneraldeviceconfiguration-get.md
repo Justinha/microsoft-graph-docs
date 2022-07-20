@@ -65,7 +65,7 @@ Here is an example of the response. Note: The response object shown here may be 
 ``` http
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 7876
+Content-Length: 10805
 
 {
   "value": {
@@ -101,6 +101,15 @@ Content-Length: 7876
     "description": "Description value",
     "displayName": "Display Name value",
     "version": 7,
+    "azureAdSharedDeviceDataClearApps": [
+      {
+        "@odata.type": "microsoft.graph.appListItem",
+        "name": "Name value",
+        "publisher": "Publisher value",
+        "appStoreUrl": "https://example.com/appStoreUrl/",
+        "appId": "App Id value"
+      }
+    ],
     "accountsBlockModification": true,
     "appsAllowInstallFromUnknownSources": true,
     "appsAutoUpdatePolicy": "userChoice",
@@ -111,6 +120,9 @@ Content-Length: 7876
     "cameraBlocked": true,
     "cellularBlockWiFiTethering": true,
     "certificateCredentialConfigurationDisabled": true,
+    "crossProfilePoliciesAllowCopyPaste": true,
+    "crossProfilePoliciesAllowDataSharing": "crossProfileDataSharingBlocked",
+    "crossProfilePoliciesShowWorkContactsInPersonalProfile": true,
     "microsoftLauncherConfigurationEnabled": true,
     "microsoftLauncherCustomWallpaperEnabled": true,
     "microsoftLauncherCustomWallpaperImageUrl": "https://example.com/microsoftLauncherCustomWallpaperImageUrl/",
@@ -123,6 +135,29 @@ Content-Length: 7876
     "enrollmentProfile": "dedicatedDevice",
     "dataRoamingBlocked": true,
     "dateTimeConfigurationBlocked": true,
+    "detailedHelpText": {
+      "@odata.type": "microsoft.graph.androidDeviceOwnerUserFacingMessage",
+      "localizedMessages": [
+        {
+          "@odata.type": "microsoft.graph.keyValuePair",
+          "name": "Name value",
+          "value": "Value value"
+        }
+      ],
+      "defaultMessage": "Default Message value"
+    },
+    "deviceOwnerLockScreenMessage": {
+      "@odata.type": "microsoft.graph.androidDeviceOwnerUserFacingMessage",
+      "localizedMessages": [
+        {
+          "@odata.type": "microsoft.graph.keyValuePair",
+          "name": "Name value",
+          "value": "Value value"
+        }
+      ],
+      "defaultMessage": "Default Message value"
+    },
+    "securityCommonCriteriaModeEnabled": true,
     "factoryResetDeviceAdministratorEmails": [
       "Factory Reset Device Administrator Emails value"
     ],
@@ -199,6 +234,16 @@ Content-Length: 7876
         }
       }
     ],
+    "kioskModeManagedHomeScreenAutoSignout": true,
+    "kioskModeManagedHomeScreenInactiveSignOutDelayInSeconds": 7,
+    "kioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds": 8,
+    "kioskModeManagedHomeScreenPinComplexity": "simple",
+    "kioskModeManagedHomeScreenPinRequired": true,
+    "kioskModeManagedHomeScreenPinRequiredToResume": true,
+    "kioskModeManagedHomeScreenSignInBackground": "Kiosk Mode Managed Home Screen Sign In Background value",
+    "kioskModeManagedHomeScreenSignInBrandingLogo": "Kiosk Mode Managed Home Screen Sign In Branding Logo value",
+    "kioskModeManagedHomeScreenSignInEnabled": true,
+    "kioskModeUseManagedHomeScreenApp": "singleAppMode",
     "microphoneForceMute": true,
     "networkEscapeHatchAllowed": true,
     "nfcBlockOutgoingBeam": true,
@@ -217,12 +262,23 @@ Content-Length: 7876
     "passwordMinutesOfInactivityBeforeScreenTimeout": 14,
     "passwordPreviousPasswordCountToBlock": 4,
     "passwordRequiredType": "required",
+    "passwordRequireUnlock": "daily",
     "passwordSignInFailureCountBeforeFactoryReset": 12,
     "playStoreMode": "allowList",
-    "safeBootBlocked": true,
     "screenCaptureBlocked": true,
-    "securityAllowDebuggingFeatures": true,
+    "securityDeveloperSettingsEnabled": true,
     "securityRequireVerifyApps": true,
+    "shortHelpText": {
+      "@odata.type": "microsoft.graph.androidDeviceOwnerUserFacingMessage",
+      "localizedMessages": [
+        {
+          "@odata.type": "microsoft.graph.keyValuePair",
+          "name": "Name value",
+          "value": "Value value"
+        }
+      ],
+      "defaultMessage": "Default Message value"
+    },
     "statusBarBlocked": true,
     "stayOnModes": [
       "ac"
@@ -230,6 +286,15 @@ Content-Length: 7876
     "storageAllowUsb": true,
     "storageBlockExternalMedia": true,
     "storageBlockUsbFileTransfer": true,
+    "systemUpdateFreezePeriods": [
+      {
+        "@odata.type": "microsoft.graph.androidDeviceOwnerSystemUpdateFreezePeriod",
+        "startMonth": 10,
+        "startDay": 8,
+        "endMonth": 8,
+        "endDay": 6
+      }
+    ],
     "systemUpdateWindowStartMinutesAfterMidnight": 11,
     "systemUpdateWindowEndMinutesAfterMidnight": 9,
     "systemUpdateInstallType": "postpone",
@@ -244,6 +309,16 @@ Content-Length: 7876
     "personalProfileAppsAllowInstallFromUnknownSources": true,
     "personalProfileCameraBlocked": true,
     "personalProfileScreenCaptureBlocked": true,
+    "personalProfilePlayStoreMode": "blockedApps",
+    "personalProfilePersonalApplications": [
+      {
+        "@odata.type": "microsoft.graph.appListItem",
+        "name": "Name value",
+        "publisher": "Publisher value",
+        "appStoreUrl": "https://example.com/appStoreUrl/",
+        "appId": "App Id value"
+      }
+    ],
     "workProfilePasswordExpirationDays": 1,
     "workProfilePasswordMinimumLength": 0,
     "workProfilePasswordMinimumNumericCharacters": 11,
@@ -254,7 +329,8 @@ Content-Length: 7876
     "workProfilePasswordMinimumSymbolCharacters": 10,
     "workProfilePasswordPreviousPasswordCountToBlock": 15,
     "workProfilePasswordSignInFailureCountBeforeFactoryReset": 7,
-    "workProfilePasswordRequiredType": "required"
+    "workProfilePasswordRequiredType": "required",
+    "workProfilePasswordRequireUnlock": "daily"
   }
 }
 ```

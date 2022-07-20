@@ -2,8 +2,8 @@
 title: "termstore enum values"
 description: "Microsoft Graph termstore enumeration values"
 doc_type: enumPageType
-localization_priority: Normal
-ms.prod: "Sharepoint"
+ms.localizationpriority: medium
+ms.prod: sites-and-lists
 author: mohitpcad
 ---
 

@@ -60,7 +60,7 @@ Here is an example of the response. Note: The response object shown here may be 
 ``` http
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 4077
+Content-Length: 4144
 
 {
   "value": [
@@ -111,7 +111,8 @@ Content-Length: 4077
         "v10_1903": true,
         "v10_1909": true,
         "v10_2004": true,
-        "v10_2H20": true
+        "v10_2H20": true,
+        "v10_21H1": true
       },
       "minimumFreeDiskSpaceInMB": 8,
       "minimumMemoryInMB": 1,
@@ -175,7 +176,8 @@ Content-Length: 4077
       },
       "setupFilePath": "Setup File Path value",
       "minimumSupportedWindowsRelease": "Minimum Supported Windows Release value",
-      "displayVersion": "Display Version value"
+      "displayVersion": "Display Version value",
+      "allowAvailableUninstall": true
     }
   ]
 }

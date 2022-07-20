@@ -1,9 +1,9 @@
 ---
 title: "attendeeBase resource type"
 description: "The type of attendee."
-localization_priority: Normal
+ms.localizationpriority: medium
 author: "harini84"
-ms.prod: ""
+ms.prod: calendar
 doc_type: resourcePageType
 ---
 

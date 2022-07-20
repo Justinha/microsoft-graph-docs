@@ -1,13 +1,13 @@
 ---
-title: "accessReviewSettings resource type"
+title: "accessReviewSettings resource type (deprecated)"
 description: "Provides additional settings when creating an access review."
-localization_priority: Normal
+ms.localizationpriority: medium
 author: "markwahl-msft"
 ms.prod: "governance"
 doc_type: resourcePageType
 ---
 
-# accessReviewSettings resource type
+# accessReviewSettings resource type (deprecated)
 
 Namespace: microsoft.graph
 

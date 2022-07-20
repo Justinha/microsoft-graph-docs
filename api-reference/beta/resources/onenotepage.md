@@ -1,9 +1,9 @@
 ---
 title: "onenotePage resource type"
 description: "A page in a OneNote notebook."
-localization_priority: Normal
+ms.localizationpriority: medium
 doc_type: resourcePageType
-ms.prod: ""
+ms.prod: notes
 author: "jewan-microsoft"
 ---
 

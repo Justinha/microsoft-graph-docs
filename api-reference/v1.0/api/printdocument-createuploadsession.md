@@ -1,7 +1,7 @@
 ---
 title: "printDocument: createUploadSession"
 description: "Create an upload session to iteratively upload ranges of binary file of printDocument."
-localization_priority: Normal
+ms.localizationpriority: medium
 author: "nilakhan"
 ms.prod: "cloud-printing"
 doc_type: "apiPageType"
@@ -9,8 +9,6 @@ doc_type: "apiPageType"
 
 # printDocument: createUploadSession
 Namespace: microsoft.graph
-
-[!INCLUDE [cloudprinting-pricing-disclaimer](../../includes/cloudprinting-pricing-disclaimer.md)]
 
 Create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document.
 
@@ -82,6 +80,8 @@ If successful, this method returns a `200 OK` response code and a new [uploadSes
 The following example shows how to create an upload session that you can use in subsequent file upload operations to the specified printDocument.
 
 ### Request
+
+# [HTTP](#tab/http)
 <!-- {
   "blockType": "request",
   "name": "printdocument_createuploadsession"
@@ -90,7 +90,6 @@ The following example shows how to create an upload session that you can use in 
 ``` http
 POST https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{printJobId}/documents/{printDocumentId}/createUploadSession
 Content-Type: application/json
-Content-length: 96
 
 {
   "properties": {
@@ -100,6 +99,21 @@ Content-length: 96
   }
 }
 ```
+
+# [C#](#tab/csharp)
+[!INCLUDE [sample-code](../includes/snippets/csharp/printdocument-createuploadsession-csharp-snippets.md)]
+[!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
+
+# [JavaScript](#tab/javascript)
+[!INCLUDE [sample-code](../includes/snippets/javascript/printdocument-createuploadsession-javascript-snippets.md)]
+[!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
+
+# [Java](#tab/java)
+[!INCLUDE [sample-code](../includes/snippets/java/printdocument-createuploadsession-java-snippets.md)]
+[!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
+
+---
+
 
 
 ### Response

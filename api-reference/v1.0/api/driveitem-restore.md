@@ -1,7 +1,7 @@
 ---
 title: "driveItem: restore"
 description: "Restore a driveItem that has been deleted and is currently in the recycle bin."
-localization_priority: Normal
+ms.localizationpriority: medium
 author: "learafa"
 ms.prod: "files"
 doc_type: "apiPageType"
@@ -77,16 +77,13 @@ Content-type: application/json
   "name": "String"
 }
 ```
+
 # [C#](#tab/csharp)
 [!INCLUDE [sample-code](../includes/snippets/csharp/restore-item-csharp-snippets.md)]
 [!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
 
 # [JavaScript](#tab/javascript)
 [!INCLUDE [sample-code](../includes/snippets/javascript/restore-item-javascript-snippets.md)]
-[!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
-
-# [Objective-C](#tab/objc)
-[!INCLUDE [sample-code](../includes/snippets/objc/restore-item-objc-snippets.md)]
 [!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
 
 # [Java](#tab/java)

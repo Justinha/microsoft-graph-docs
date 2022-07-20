@@ -2,9 +2,9 @@
 author: nilakhan
 description: "Represents information for print document upload"
 title: "printDocumentUploadProperties resource type"
-localization_priority: Normal
+ms.localizationpriority: medium
 doc_type: "resourcePageType"
-ms.prod: universal-print
+ms.prod: cloud-printing
 ---
 # printDocumentUploadProperties resource type
 

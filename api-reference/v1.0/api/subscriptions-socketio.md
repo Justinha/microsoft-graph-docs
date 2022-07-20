@@ -1,7 +1,7 @@
 ---
 author: daspek
 title: "Get websocket endpoint"
-localization_priority: Normal
+ms.localizationpriority: medium
 ms.prod: "sharepoint"
 description: "Allows you to receive near-real-time change notifications for a drive using socket.io."
 doc_type: apiPageType
@@ -51,16 +51,13 @@ GET /sites/{siteId}/lists/{listId}/drive/root/subscriptions/socketIo
 ```msgraph-interactive
 GET /me/drive/root/subscriptions/socketIo
 ```
+
 # [C#](#tab/csharp)
 [!INCLUDE [sample-code](../includes/snippets/csharp/drive-root-subscriptions-socketio-csharp-snippets.md)]
 [!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
 
 # [JavaScript](#tab/javascript)
 [!INCLUDE [sample-code](../includes/snippets/javascript/drive-root-subscriptions-socketio-javascript-snippets.md)]
-[!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
-
-# [Objective-C](#tab/objc)
-[!INCLUDE [sample-code](../includes/snippets/objc/drive-root-subscriptions-socketio-objc-snippets.md)]
 [!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
 
 # [Java](#tab/java)

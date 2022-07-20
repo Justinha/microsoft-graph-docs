@@ -41,11 +41,8 @@ var call = new Call
 			User = new Identity
 			{
 				Id = "5810cede-f3cc-42eb-b2c1-e9bd5d53ec96",
-				DisplayName = "Bob",
-				AdditionalData = new Dictionary<string, object>()
-				{
-					{"tenantId", "86dc81db-c112-4228-9222-63f3esaa1edb"}
-				}
+				TenantId = "9f386a15-f9cc-445b-8106-ac85e314a07b",
+				DisplayName = "Bob"
 			}
 		},
 		AllowConversationWithoutHost = true

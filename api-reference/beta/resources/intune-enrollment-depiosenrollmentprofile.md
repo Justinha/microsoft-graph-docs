@@ -81,6 +81,12 @@ Inherits from [depEnrollmentBaseProfile](../resources/intune-enrollment-depenrol
 |zoomDisabled|Boolean|Indicates if zoom setup pane is disabled|
 |restoreCompletedScreenDisabled|Boolean|Indicates if Weclome screen is disabled|
 |updateCompleteScreenDisabled|Boolean|Indicates if Weclome screen is disabled|
+|forceTemporarySession|Boolean|Indicates if temporary sessions is enabled|
+|temporarySessionTimeoutInSeconds|Int32|Indicates timeout of temporary session|
+|userSessionTimeoutInSeconds|Int32|Indicates timeout of temporary session|
+|passcodeLockGracePeriodInSeconds|Int32|Indicates timeout before locked screen requires the user to enter the device passocde to unlock it|
+|carrierActivationUrl|String|Carrier URL for activating device eSIM.|
+|userlessSharedAadModeEnabled|Boolean|Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See https://docs.microsoft.com/mem/intune/enrollment/device-enrollment-shared-ios|
 
 ## Relationships
 None
@@ -150,7 +156,13 @@ Here is a JSON representation of the resource.
   "passCodeDisabled": true,
   "zoomDisabled": true,
   "restoreCompletedScreenDisabled": true,
-  "updateCompleteScreenDisabled": true
+  "updateCompleteScreenDisabled": true,
+  "forceTemporarySession": true,
+  "temporarySessionTimeoutInSeconds": 1024,
+  "userSessionTimeoutInSeconds": 1024,
+  "passcodeLockGracePeriodInSeconds": 1024,
+  "carrierActivationUrl": "String",
+  "userlessSharedAadModeEnabled": true
 }
 ```
 

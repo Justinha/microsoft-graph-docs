@@ -2,7 +2,7 @@
 title: "Manage mobile apps with Microsoft Intune - Microsoft Graph API"
 description: "Lists the Microsoft Graph API for Intune endpoints (REST) related to mobile app management (MAM) for a tenant organization."
 author: "dougeby"
-localization_priority: Normal
+ms.localizationpriority: medium
 ms.prod: "intune"
 ---
 
@@ -28,11 +28,18 @@ The following Graph resources are available to manage app protection polices in 
 - [App management level](intune-mam-appmanagementlevel.md)
 - [Application type](intune-wip-applicationtype.md)
 - [Default managed app protection](intune-mam-defaultmanagedappprotection.md)
+- [Device management configuration exchange online setting applicability](intune-mam-devicemanagementconfigurationexchangeonlinesettingapplicability.md)
+- [Device management configuration setting applicability](intune-mam-devicemanagementconfigurationsettingapplicability.md)
+- [Device management configuration string setting value definition](intune-mam-devicemanagementconfigurationstringsettingvaluedefinition.md)
+- [Device management configuration technologies](intune-mam-devicemanagementconfigurationtechnologies.md)
+- [Device management configuration windows setting applicability](intune-mam-devicemanagementconfigurationwindowssettingapplicability.md)
+- [Device platform type](intune-wip-deviceplatformtype.md)
 - [Intune branding profile](intune-wip-intunebrandingprofile.md)
 - [Intune branding profile assignment](intune-wip-intunebrandingprofileassignment.md)
 - [iOS managed app registration](intune-mam-iosmanagedappregistration.md)
 - [iOS mobile app identifier](intune-mam-iosmobileappidentifier.md)
 - [JSON](intune-mam-json.md)
+- [Key/value pair](intune-mam-keyvaluepair.md)
 - [Mac app identifier](intune-mam-macappidentifier.md)
 - [Managed app clipboard sharing level](intune-mam-managedappclipboardsharinglevel.md)
 - [Managed app configuration](intune-mam-managedappconfiguration.md)
@@ -58,6 +65,7 @@ The following Graph resources are available to manage app protection polices in 
 - [Managed browser type](intune-mam-managedbrowsertype.md)
 - [Managed mobile app](intune-mam-managedmobileapp.md)
 - [Mobile app identifier](intune-mam-mobileappidentifier.md)
+- [Targeted managed app group type](intune-mam-targetedmanagedappgrouptype.md)
 - [Targeted managed app policy assignment](intune-mam-targetedmanagedapppolicyassignment.md)
 - [Targeted managed app protection](intune-mam-targetedmanagedappprotection.md)
 - [Windows app identifier](intune-mam-windowsappidentifier.md)
@@ -77,3 +85,6 @@ The following Graph resources are available to manage app protection polices in 
 - [Windows information protection resource collection](intune-mam-windowsinformationprotectionresourcecollection.md)
 - [Windows information protection store app](intune-mam-windowsinformationprotectionstoreapp.md)
 - [Windows information protection wipe action](intune-mam-windowsinformationprotectionwipeaction.md)
+- [Windows managed app clipboard sharing level](intune-mam-windowsmanagedappclipboardsharinglevel.md)
+- [Windows managed app data transfer level](intune-mam-windowsmanagedappdatatransferlevel.md)
+- [Windows managed app protection](intune-mam-windowsmanagedappprotection.md)

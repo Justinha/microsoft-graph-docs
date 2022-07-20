@@ -30,7 +30,3 @@ Movies rating labels in Canada
 
 
 
-
-
-
-

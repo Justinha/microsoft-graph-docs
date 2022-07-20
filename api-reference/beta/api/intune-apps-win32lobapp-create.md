@@ -88,6 +88,7 @@ The following table shows the properties that are required when you create the w
 |setupFilePath|String|The relative path of the setup file in the encrypted Win32LobApp package.|
 |minimumSupportedWindowsRelease|String|The value for the minimum supported windows release.|
 |displayVersion|String|The version displayed in the UX for this app.|
+|allowAvailableUninstall|Boolean|When TRUE, indicates that uninstall is supported from the company portal for the Windows app (Win32) with an Available assignment. When FALSE, indicates that uninstall is not supported for the Windows app (Win32) with an Available assignment. Default value is FALSE.|
 
 
 
@@ -101,7 +102,7 @@ Here is an example of the request.
 ``` http
 POST https://graph.microsoft.com/beta/deviceAppManagement/mobileApps
 Content-type: application/json
-Content-length: 3428
+Content-length: 3487
 
 {
   "@odata.type": "#microsoft.graph.win32LobApp",
@@ -147,7 +148,8 @@ Content-length: 3428
     "v10_1903": true,
     "v10_1909": true,
     "v10_2004": true,
-    "v10_2H20": true
+    "v10_2H20": true,
+    "v10_21H1": true
   },
   "minimumFreeDiskSpaceInMB": 8,
   "minimumMemoryInMB": 1,
@@ -211,7 +213,8 @@ Content-length: 3428
   },
   "setupFilePath": "Setup File Path value",
   "minimumSupportedWindowsRelease": "Minimum Supported Windows Release value",
-  "displayVersion": "Display Version value"
+  "displayVersion": "Display Version value",
+  "allowAvailableUninstall": true
 }
 ```
 
@@ -220,7 +223,7 @@ Here is an example of the response. Note: The response object shown here may be 
 ``` http
 HTTP/1.1 201 Created
 Content-Type: application/json
-Content-Length: 3600
+Content-Length: 3659
 
 {
   "@odata.type": "#microsoft.graph.win32LobApp",
@@ -269,7 +272,8 @@ Content-Length: 3600
     "v10_1903": true,
     "v10_1909": true,
     "v10_2004": true,
-    "v10_2H20": true
+    "v10_2H20": true,
+    "v10_21H1": true
   },
   "minimumFreeDiskSpaceInMB": 8,
   "minimumMemoryInMB": 1,
@@ -333,7 +337,8 @@ Content-Length: 3600
   },
   "setupFilePath": "Setup File Path value",
   "minimumSupportedWindowsRelease": "Minimum Supported Windows Release value",
-  "displayVersion": "Display Version value"
+  "displayVersion": "Display Version value",
+  "allowAvailableUninstall": true
 }
 ```
 

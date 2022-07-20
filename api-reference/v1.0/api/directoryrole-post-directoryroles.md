@@ -1,7 +1,7 @@
 ---
 title: "Activate directoryRole"
 description: "Activate a directory role."
-localization_priority: Normal
+ms.localizationpriority: medium
 author: "abhijeetsinha"
 ms.prod: "directory-management"
 doc_type: apiPageType
@@ -18,7 +18,7 @@ One of the following permissions is required to call this API. To learn more, in
 
 |Permission type      | Permissions (from least to most privileged)              |
 |:--------------------|:---------------------------------------------------------|
-|Delegated (work or school account) | RoleManagement.ReadWrite.Directory, Directory.AccessAsUser.All    |
+|Delegated (work or school account) | RoleManagement.ReadWrite.Directory    |
 |Delegated (personal Microsoft account) | Not supported.    |
 |Application | RoleManagement.ReadWrite.Directory |
 
@@ -29,10 +29,10 @@ POST /directoryRoles
 
 ```
 ## Request headers
-| Name       | Type | Description|
-|:---------------|:--------|:----------|
-| Authorization  | string  | Bearer {token}. Required. |
-| Content-Type  | string  | application/json  |
+| Name       | Description|
+|:---------------|:--------|
+| Authorization  | Bearer {token}. Required. |
+| Content-Type  | application/json  |
 
 ## Request body
 In the request body, supply a JSON representation of [directoryRole](../resources/directoryrole.md) object.
@@ -61,9 +61,10 @@ POST https://graph.microsoft.com/v1.0/directoryRoles
 Content-type: application/json
 
 {
-  "roleTemplateId": "roleTemplateId-value"
+  "roleTemplateId": "fe930be7-5e62-47db-91af-98c3a49a38b1"
 }
 ```
+
 # [C#](#tab/csharp)
 [!INCLUDE [sample-code](../includes/snippets/csharp/create-directoryrole-from-directoryroles-csharp-snippets.md)]
 [!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
@@ -72,12 +73,20 @@ Content-type: application/json
 [!INCLUDE [sample-code](../includes/snippets/javascript/create-directoryrole-from-directoryroles-javascript-snippets.md)]
 [!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
 
-# [Objective-C](#tab/objc)
-[!INCLUDE [sample-code](../includes/snippets/objc/create-directoryrole-from-directoryroles-objc-snippets.md)]
-[!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
-
 # [Java](#tab/java)
 [!INCLUDE [sample-code](../includes/snippets/java/create-directoryrole-from-directoryroles-java-snippets.md)]
+[!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
+
+# [Go](#tab/go)
+[!INCLUDE [sample-code](../includes/snippets/go/create-directoryrole-from-directoryroles-go-snippets.md)]
+[!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
+
+# [PowerShell](#tab/powershell)
+[!INCLUDE [sample-code](../includes/snippets/powershell/create-directoryrole-from-directoryroles-powershell-snippets.md)]
+[!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
+
+# [PHP](#tab/php)
+[!INCLUDE [sample-code](../includes/snippets/php/create-directoryrole-from-directoryroles-php-snippets.md)]
 [!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
 
 ---
@@ -95,10 +104,12 @@ HTTP/1.1 201 Created
 Content-type: application/json
 
 {
-  "description": "description-value",
-  "displayName": "displayName-value",
-  "roleTemplateId": "roleTemplateId-value",
-  "id": "id-value"
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#directoryRoles/$entity",
+  "id": "76f84d30-2759-4c66-915d-65c6e4083fa0",
+  "deletedDateTime": null,
+  "description": "Can manage all aspects of users and groups, including resetting passwords for limited admins.",
+  "displayName": "User Administrator",
+  "roleTemplateId": "fe930be7-5e62-47db-91af-98c3a49a38b1"
 }
 ```
 

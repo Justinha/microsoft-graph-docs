@@ -2,8 +2,8 @@
 title: "Create relation"
 description: "Create a new relation object."
 author: mohitpcad
-localization_priority: Normal
-ms.prod: "Sharepoint"
+ms.localizationpriority: medium
+ms.prod: sites-and-lists
 doc_type: apiPageType
 ---
 
@@ -64,7 +64,6 @@ If successful, this method returns a `201 Created` response code and a [relation
 ``` http
 POST https://graph.microsoft.com/beta/termStore/sets/{setId}/terms/{termId}/relations
 Content-Type: application/json
-Content-length: 89
 
 {
   "@odata.type": "#microsoft.graph.termStore.relation",

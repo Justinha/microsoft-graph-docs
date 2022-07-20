@@ -49,17 +49,27 @@ Here is a JSON representation of the resource.
   "id": "String (identifier)",
   "intent": "String",
   "target": {
-    "@odata.type": "microsoft.graph.deviceAndAppManagementAssignmentTarget"
+    "@odata.type": "microsoft.graph.allLicensedUsersAssignmentTarget"
   },
   "settings": {
-    "@odata.type": "microsoft.graph.mobileAppAssignmentSettings"
+    "@odata.type": "microsoft.graph.win32LobAppAssignmentSettings",
+    "notifications": "String",
+    "restartSettings": {
+      "@odata.type": "microsoft.graph.win32LobAppRestartSettings",
+      "gracePeriodInMinutes": 1024,
+      "countdownDisplayBeforeRestartInMinutes": 1024,
+      "restartNotificationSnoozeDurationInMinutes": 1024
+    },
+    "installTimeSettings": {
+      "@odata.type": "microsoft.graph.mobileAppInstallTimeSettings",
+      "useLocalTime": true,
+      "startDateTime": "String (timestamp)",
+      "deadlineDateTime": "String (timestamp)"
+    },
+    "deliveryOptimizationPriority": "String"
   }
 }
 ```
-
-
-
-
 
 
 

@@ -1,8 +1,8 @@
 ---
 title: "userRegistrationMethodCount resource type"
 description: "Number of users registered for an authentication method."
-author: "danielwood95"
-localization_priority: Normal
+author: "besiler"
+ms.localizationpriority: medium
 ms.prod: "reports"
 doc_type: resourcePageType
 ---

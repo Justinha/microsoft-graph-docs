@@ -1,7 +1,7 @@
 ---
 title: "servicePrincipal: removePassword"
 description: "Remove a password from a servicePrincipal"
-localization_priority: Normal
+ms.localizationpriority: medium
 author: "sureshja"
 ms.prod: "applications"
 doc_type: "apiPageType"
@@ -21,7 +21,7 @@ One of the following permissions is required to call this API. To learn more, in
 
 | Permission type                        | Permissions (from least to most privileged) |
 |:---------------------------------------|:--------------------------------------------|
-| Delegated (work or school account)     | Application.ReadWrite.All, Directory.ReadWrite.All, Directory.AccessAsUser.All |
+| Delegated (work or school account)     | Application.ReadWrite.All, Directory.ReadWrite.All |
 | Delegated (personal Microsoft account) | Not supported. |
 | Application                            | Application.ReadWrite.OwnedBy, Application.ReadWrite.All, Directory.ReadWrite.All |
 
@@ -44,7 +44,7 @@ POST /servicePrincipals/{id}/removePassword
 
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-| keyId | GUID | The unique identifier for the password. Required. |
+| keyId | Guid | The unique identifier for the password. Required. |
 
 ## Response
 
@@ -72,6 +72,7 @@ Content-type: application/json
     "keyId": "f0b0b335-1d71-4883-8f98-567911bfdca6"
 }
 ```
+
 # [JavaScript](#tab/javascript)
 [!INCLUDE [sample-code](../includes/snippets/javascript/serviceprincipal-removepassword-javascript-snippets.md)]
 [!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
@@ -84,9 +85,7 @@ Content-type: application/json
 The following is an example of the response.
 
 <!-- {
-  "blockType": "response",
-  "truncated": true,
-  "@odata.type": "microsoft.graph.passwordCredential"
+  "blockType": "response"
 } -->
 
 ```http

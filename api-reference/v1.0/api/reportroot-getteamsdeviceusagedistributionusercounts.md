@@ -1,7 +1,7 @@
 ---
 title: "reportRoot: getTeamsDeviceUsageDistributionUserCounts"
 description: "Get the number of Microsoft Teams unique users by device type over the selected time period."
-localization_priority: Normal
+ms.localizationpriority: medium
 ms.prod: "reports"
 author: "sarahwxy"
 doc_type: apiPageType
@@ -62,7 +62,12 @@ The CSV file has the following headers for columns:
 - iOS
 - Mac
 - Windows
+- Chrome OS
+- Linux
 - Report Period
+
+> [!CAUTION] 
+> The **Windows Phone** column is deprecated and its value will always be `0`. It's kept in the response for backward compatibility reasons.
 
 ## Example
 
@@ -105,7 +110,7 @@ Follow the 302 redirection and the CSV file that downloads will have the followi
 HTTP/1.1 200 OK
 Content-Type: application/octet-stream
 
-Report Refresh Date,Web,Windows Phone,Android Phone,iOS,Mac,Windows,Report Period
+Report Refresh Date,Web,Windows Phone,Android Phone,iOS,Mac,Windows,Chrome OS,Linux,Report Period
 ```
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79 
 2015-10-25 14:57:30 UTC -->

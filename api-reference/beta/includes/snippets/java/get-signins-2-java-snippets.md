@@ -8,6 +8,8 @@ GraphServiceClient graphClient = GraphServiceClient.builder().authenticationProv
 
 SignInCollectionPage signIns = graphClient.auditLogs().signIns()
 	.buildRequest()
+	.filter("startsWith(appDisplayName,'Azure')")
+	.top(10)
 	.get();
 
 ```

@@ -1,7 +1,7 @@
 ---
 title: "plannerPlan resource type"
 description: "The **plannerPlan** resource represents a plan in Microsoft 365. A plan can be owned by a group and contains a collection of plannerTasks. It can also have a collection of plannerBuckets. Each plan object has a details object which can contain more information about the plan. For more information about the relationships between groups, plans, and tasks, see Planner."
-localization_priority: Normal
+ms.localizationpriority: medium
 author: "TarkanSevilmis"
 ms.prod: "planner"
 doc_type: resourcePageType
@@ -25,6 +25,7 @@ The **plannerPlan** resource represents a plan in Microsoft 365. A plan can be o
 |[List buckets](../api/plannerplan-list-buckets.md) |[plannerBucket](plannerbucket.md) collection| Get a **plannerBucket** object collection.|
 |[List tasks](../api/plannerplan-list-tasks.md) |[plannerTask](plannertask.md) collection| Get a **plannerTask** object collection.|
 |[Update](../api/plannerplan-update.md) | [plannerPlan](plannerplan.md)	|Update **plannerPlan** object. |
+|[Delete](../api/plannerplan-delete.md) | None | Delete **plannerPlan** object. |
 
 ## Properties
 | Property	   | Type	|Description|

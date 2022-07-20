@@ -1,7 +1,7 @@
 ---
 title: "educationOutcome resource type"
 description: "The result of grading an assignment"
-localization_priority: Normal
+ms.localizationpriority: medium
 author: "dipakboyed"
 ms.prod: "education"
 doc_type: "resourcePageType"
@@ -13,7 +13,7 @@ Namespace: microsoft.graph
 
 [!INCLUDE [beta-disclaimer](../../includes/beta-disclaimer.md)]
 
-The result of grading an assignment. This is a base class; the derived types are [educationFeedbackOutcome](educationfeedbackoutcome.md), [educationPointsOutcome](educationpointsoutcome.md), and [educationRubricOutcome](educationrubricoutcome.md).
+The result of grading an assignment. This is a base class; the derived types are [educationFeedbackOutcome](educationfeedbackoutcome.md), [educationPointsOutcome](educationpointsoutcome.md), [educationRubricOutcome](educationrubricoutcome.md), and [educationFeedbackResourceOutcome](educationfeedbackresourceoutcome.md).
 
 ## Methods
 
@@ -21,9 +21,16 @@ The result of grading an assignment. This is a base class; the derived types are
 |:-------------|:------------|:------------|
 | [Update educationOutcome](../api/educationoutcome-update.md) | [educationOutcome](educationoutcome.md) | Update educationOutcome object. |
 
+## Properties
+| Property	   | Type	|Description|
+|:---------------|:--------|:----------|
+|id|String|Read-only.|
+|lastModifiedBy|[identitySet](identityset.md)|The individual who updated the resource.|
+|lastModifiedDateTime|DateTimeOffset|Moment in time when the resource was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is `2021-01-01T00:00:00Z`.|
+
 ## Relationships
 
-None
+None.
 
 ## JSON representation
 

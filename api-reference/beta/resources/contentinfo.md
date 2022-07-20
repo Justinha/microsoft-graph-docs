@@ -1,7 +1,7 @@
 ---
 title: "contentInfo resource type"
 description: "Represents the current state of some information that is to be labeled."
-localization_priority: Normal
+ms.localizationpriority: medium
 author: "tommoser"
 ms.prod: "security"
 doc_type: "resourcePageType"
@@ -21,7 +21,7 @@ Represents the current state of some information that is to be labeled. **conten
 | :--------- | :----------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------ |
 | format     | String                                     | Possible values are: `default`, `email`.                                                                                        |
 | identifier | String                                     | Identifier used for Azure Information Protection Analytics.                                                                     |
-| metadata   | [keyValuePair](keyvaluepair.md) collection | Existing Microsoft Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName. |
+| metadata   | [keyValuePair](keyvaluepair.md) collection | Existing Microsoft Purview Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName. |
 | state      | String                                     | Possible values are: `rest`, `motion`, `use`.                                                                                   |
 
 ## JSON representation

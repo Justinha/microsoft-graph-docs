@@ -2,8 +2,8 @@
 title: "Create set"
 description: "Create a new set object."
 author: mohitpcad
-localization_priority: Normal
-ms.prod: "Sharepoint"
+ms.localizationpriority: medium
+ms.prod: sites-and-lists
 doc_type: apiPageType
 ---
 
@@ -62,7 +62,6 @@ If successful, this method returns a `201 Created` response code and a [set](../
 ``` http
 POST https://graph.microsoft.com/beta/termStore/sets
 Content-Type: application/json
-Content-length: 288
 
 {
   "@odata.type": "#microsoft.graph.termStore.set",

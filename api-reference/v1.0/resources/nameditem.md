@@ -1,9 +1,9 @@
 ---
 title: "NamedItem resource type"
 description: "Represents a defined name for a range of cells or value. Names can be primitive named objects (as seen in the type below), range object, reference to a range. This object can be used to obtain range object associated with names."
-localization_priority: Normal
+ms.localizationpriority: medium
 author: "ruoyingl"
-ms.prod: ""
+ms.prod: workbooks-and-charts
 doc_type: resourcePageType
 ---
 
