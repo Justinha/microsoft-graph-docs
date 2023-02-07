@@ -33,7 +33,7 @@ One of the following permissions is required to call this API. To learn more, in
 |:---|:---|
 |Delegated (work or school account)|Tasks.ReadWrite|
 |Delegated (personal Microsoft account)|Tasks.ReadWrite|
-|Application|Not supported.|
+|Application|Tasks.ReadWrite.All|
 
 
 ## HTTP request
@@ -75,7 +75,8 @@ The following is an example of a request to create an upload session.
 # [HTTP](#tab/http)
 <!-- {
   "blockType": "request",
-  "name": "attachmentbasethis.createuploadsession"
+  "name": "attachmentbasethis.createuploadsession",
+  "sampleKeys": ["AAMDiFkfh=", "AAMkADliMm="]
 }
 -->
 ``` http
@@ -84,7 +85,6 @@ Content-Type: application/json
 
 {
   "attachmentInfo": {
-    "@odata.type": "microsoft.graph.attachmentInfo",
     "attachmentType": "file",
     "name": "flower",
     "size": 3483322

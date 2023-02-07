@@ -54,7 +54,8 @@ If successful, this method returns a `200 OK` response code and a collection of 
 The following is an example of the request.
 
 <!-- {
-  "blockType": "request"
+  "blockType": "request",
+  "sampleKeys": ["Contosolunchdelivery@contoso.onmicrosoft.com"]
 }-->
 ```http
 GET https://graph.microsoft.com/v1.0/solutions/bookingBusinesses/Contosolunchdelivery@contoso.onmicrosoft.com/staffMembers
@@ -87,6 +88,7 @@ Content-type: application/json
             "role":"externalGuest",
             "timeZone":"America/Chicago",
             "useBusinessHours":true,
+            "isEmailNotificationEnabled": false,
             "workingHours":[
                 {
                     "day":"monday",
@@ -144,6 +146,7 @@ Content-type: application/json
             "role":"administrator",
             "timeZone":"America/Chicago",
             "useBusinessHours":true,
+            "isEmailNotificationEnabled": false,
             "workingHours":[
                 {
                     "day":"monday",

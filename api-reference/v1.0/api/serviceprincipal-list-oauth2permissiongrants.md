@@ -25,10 +25,13 @@ One of the following permissions is required to call this API. To learn more, in
 
 ## HTTP request
 
+You can address the service principal using either its **id** or **appId**. **id** and **appId** are referred to as the **Object ID** and **Application (Client) ID**, respectively, in the Azure portal
+
 <!-- { "blockType": "ignored" } -->
 
 ```http
 GET /servicePrincipals/{id}/oauth2PermissionGrants
+GET /servicePrincipals(appId='{appId}')/oauth2PermissionGrants
 ```
 
 ## Optional query parameters
@@ -63,7 +66,7 @@ Here is an example of the request.
 }-->
 
 ```msgraph-interactive
-GET https://graph.microsoft.com/v1.0/servicePrincipals/{id}/oauth2PermissionGrants
+GET https://graph.microsoft.com/v1.0/servicePrincipals/00063ffc-54e9-405d-b8f3-56124728e051/oauth2PermissionGrants
 ```
 
 # [C#](#tab/csharp)

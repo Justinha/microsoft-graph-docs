@@ -7,14 +7,17 @@ description: "Automatically generated file. DO NOT MODIFY"
 //THE GO SDK IS IN PREVIEW. NON-PRODUCTION USE ONLY
 graphClient := msgraphsdk.NewGraphServiceClient(requestAdapter)
 
-requestParameters := &graphconfig.TeamsAppsRequestBuilderPostQueryParameters{
-	RequiresReview: true,
+
+requestRequiresreview := true
+
+requestParameters := &graphconfig.AppCatalogsTeamsAppsRequestBuilderPostQueryParameters{
+	Requiresreview: &requestRequiresreview,
 }
-configuration := &graphconfig.TeamsAppsRequestBuilderPostRequestConfiguration{
+configuration := &graphconfig.AppCatalogsTeamsAppsRequestBuilderPostRequestConfiguration{
 	QueryParameters: requestParameters,
 }
 
-graphClient.AppCatalogs().TeamsApps().PostWithRequestConfigurationAndResponseHandler(configuration, nil)
+graphClient.AppCatalogs().TeamsApps().Post(context.Background(), configuration)
 
 
 ```

@@ -29,6 +29,12 @@ One of the following permissions is required to call this API. To learn more, in
 |Delegated (personal Microsoft account) | Not supported.    |
 |Application | Domain.ReadWrite.All |
 
+The work or school account needs to belong to one of the following roles:
+
+* Global Administrator
+* Domain Name Administrator
+* Partner Tier2 Support
+
 ## HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
@@ -59,7 +65,8 @@ If successful, this method returns `204 No Content` response code. It does not r
 # [HTTP](#tab/http)
 <!-- {
   "blockType": "request",
-  "name": "delete_domain"
+  "name": "delete_domain",
+  "sampleKeys": ["contoso.com"]
 }-->
 ```http
 DELETE https://graph.microsoft.com/beta/domains/contoso.com

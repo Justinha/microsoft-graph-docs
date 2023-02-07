@@ -7,14 +7,17 @@ description: "Automatically generated file. DO NOT MODIFY"
 //THE GO SDK IS IN PREVIEW. NON-PRODUCTION USE ONLY
 graphClient := msgraphsdk.NewGraphServiceClient(requestAdapter)
 
-requestParameters := &graphconfig.DeltaRequestBuilderGetQueryParameters{
-	Token: "1230919asd190410jlka",
+
+requestToken := "1230919asd190410jlka"
+
+requestParameters := &graphconfig.SiteItemListItemItemsMicrosoft.graph.delta()RequestBuilderGetQueryParameters{
+	Token: &requestToken,
 }
-configuration := &graphconfig.DeltaRequestBuilderGetRequestConfiguration{
+configuration := &graphconfig.SiteItemListItemItemsMicrosoft.graph.delta()RequestBuilderGetRequestConfiguration{
 	QueryParameters: requestParameters,
 }
 
-result, err := graphClient.SitesById("site-id").ListsById("list-id").Items().Delta()(site-id, list-id).GetWithRequestConfigurationAndResponseHandler(configuration, nil)
+result, err := graphClient.SitesById("site-id").ListsById("list-id").Items().Delta().Get(context.Background(), configuration)
 
 
 ```

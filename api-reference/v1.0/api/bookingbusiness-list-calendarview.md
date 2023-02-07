@@ -63,7 +63,8 @@ If successful, this method returns a `200 OK` response code and a collection of 
 The following is an example of the request.
 
 <!-- {
-  "blockType": "request"
+  "blockType": "request",
+  "sampleKeys": ["Contosolunchdelivery@contoso.onmicrosoft.com"]
 }-->
 ```http
 GET https://graph.microsoft.com/v1.0/solutions/bookingBusinesses/Contosolunchdelivery@contoso.onmicrosoft.com/calendarView?start=2018-04-30T00:00:00Z&end=2018-05-10T00:00:00Z
@@ -93,6 +94,7 @@ Content-type: application/json
             "selfServiceAppointmentId": "00000000-0000-0000-0000-000000000000",
             "isLocationOnline": true,
             "joinWebUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_MTlhZTE3MDUtODk0Yy00MGZkLTlhNzktN2FmYTk3MDUxNmE2%40thread.v2/0?context=%7b%22Tid%22%3a%22995fa18c-b557-4694-8d07-b89779d6dc77%22%2c%22Oid%22%3a%22d4d260ab-989d-490e-b121-e2066391807a%22%7d",
+            "anonymousJoinWebUrl": null,
             "customers": [
                 {
                     "@odata.type": "#microsoft.graph.bookingCustomerInformation",
@@ -101,6 +103,7 @@ Content-type: application/json
                     "emailAddress": "adelev@proseware.com",
                     "phone": "213-555-0156",
                     "notes": null,
+                    "smsNotificationsEnabled": true,
                     "location": {
                         "displayName": "Customer",
                         "locationEmailAddress": null,
@@ -134,7 +137,7 @@ Content-type: application/json
             "preBuffer": "PT5M",
             "postBuffer": "PT10M",
             "priceType": "fixedPrice",
-            "price": 10,
+            "price": 10.0,
             "serviceNotes": null,
             "optOutOfCustomerEmail": false,
             "staffMemberIds": [],
@@ -175,6 +178,7 @@ Content-type: application/json
             "selfServiceAppointmentId": "00000000-0000-0000-0000-000000000000",
             "isLocationOnline": true,
             "joinWebUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_MDUtODk0Yy00MGZkLTlhNzktN2xNmE2%40thread.v2/0?context=%7b%22Tid%22%3a%22995fa18c-b557-4694-8d07-b89779d6dc77%22%2c%22Oid%22%3a%22d4d260ab-989d-490e-b121-e2066391807a%22%7d",
+            "anonymousJoinWebUrl": null,
             "customers": [
                 {
                     "@odata.type": "#microsoft.graph.bookingCustomerInformation",
@@ -183,6 +187,7 @@ Content-type: application/json
                     "emailAddress": "jordanm@contoso.com",
                     "phone": "213-555-0199",
                     "notes": null,
+                    "smsNotificationsEnabled": true,
                     "location": {
                         "displayName": "Customer",
                         "locationEmailAddress": null,
@@ -216,7 +221,7 @@ Content-type: application/json
             "preBuffer": "PT5M",
             "postBuffer": "PT10M",
             "priceType": "fixedPrice",
-            "price": 10,
+            "price": 10.0,
             "serviceNotes": null,
             "optOutOfCustomerEmail": false,
             "staffMemberIds": [],

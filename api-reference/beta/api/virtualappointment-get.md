@@ -20,12 +20,13 @@ One of the following permissions is required to call this API. To learn more, in
 
 | Permission type                        | Permissions (from least to most privileged)                                            |
 |:---------------------------------------|:---------------------------------------------------------------------------------------|
-| Delegated (work or school account)     | OnlineMeetings.ReadWrite, OnlineMeetings.Read                                  |
+| Delegated (work or school account)     | VirtualAppointment.ReadWrite, VirtualAppointment.Read, OnlineMeetings.ReadWrite, OnlineMeetings.Read                                  |
 | Delegated (personal Microsoft account) | Not supported.                                                                         |
-| Application                            | Not supported.
+| Application                            | VirtualAppointment.ReadWrite.All, VirtualAppointment.Read.All
 
 > [!NOTE]
->Virtual appointment will transition from online meeting permissions to virtual appointment permissions during the preview period. As we get closer to the transition, we'll provide additional details on the updated permission requirements and timeline.
+> Virtual appointment will transition from online meeting permissions to more specific virtual appointment permissions during the preview period. This will give developers more granular control over virtual appointment permissions. We'll provide additional details on when online meeting permissions will no longer be supported before the preview period ends.
+
 
 ## HTTP request
 
@@ -34,7 +35,8 @@ One of the following permissions is required to call this API. To learn more, in
 }
 -->
 ``` http
-GET /onlineMeeting/{onlineMeetingId}/virtualAppointment
+GET /me/onlineMeetings/{onlineMeetingId}/virtualAppointment
+GET /users/{userId}/onlineMeetings/{onlineMeetingId}/virtualAppointment
 ```
 
 ## Optional query parameters
@@ -58,14 +60,32 @@ If successful, this method returns a `200 OK` response code and a [virtualAppoin
 
 ### Request
 The following is an example of a request.
+
+# [HTTP](#tab/http)
 <!-- {
   "blockType": "request",
-  "name": "get_virtualappointment"
+  "name": "get_virtualappointment",
+  "sampleKeys": ["MSpkYzE3Njc0Yy04MWQ5LTRhZGItYmZi"]
 }
 -->
 ``` http
-GET https://graph.microsoft.com/beta/onlineMeeting/MSpkYzE3Njc0Yy04MWQ5LTRhZGItYmZi/virtualAppointment
+GET https://graph.microsoft.com/beta/me/onlineMeeting/MSpkYzE3Njc0Yy04MWQ5LTRhZGItYmZi/virtualAppointment
 ```
+
+# [C#](#tab/csharp)
+[!INCLUDE [sample-code](../includes/snippets/csharp/get-virtualappointment-csharp-snippets.md)]
+[!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
+
+# [JavaScript](#tab/javascript)
+[!INCLUDE [sample-code](../includes/snippets/javascript/get-virtualappointment-javascript-snippets.md)]
+[!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
+
+# [Java](#tab/java)
+[!INCLUDE [sample-code](../includes/snippets/java/get-virtualappointment-java-snippets.md)]
+[!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
+
+---
+
 
 
 ### Response
@@ -80,6 +100,7 @@ The following is an example of the response.
 ``` http
 HTTP/1.1 200 OK
 Content-Type: application/json
+ETag: W/"ZfYdV7Meckeip07P//nwjAAADyI7NQ=="
 
 {
     "value": {

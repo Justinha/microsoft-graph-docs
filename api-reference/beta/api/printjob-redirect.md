@@ -59,7 +59,8 @@ The following is an example of the request.
 # [HTTP](#tab/http)
 <!-- {
   "blockType": "request",
-  "name": "printjob-redirect"
+  "name": "printjob-redirect",
+  "sampleKeys": ["44353", "d5ef6ec4-07ca-4212-baf9-d45be126bfbb"]
 }-->
 ```http
 POST https://graph.microsoft.com/beta/print/printers/d5ef6ec4-07ca-4212-baf9-d45be126bfbb/jobs/44353/redirect
@@ -114,10 +115,6 @@ POST https://graph.microsoft.com/beta/print/printers/d5ef6ec4-07ca-4212-baf9-d45
 
 ---
 
-
----
-
-
 ### Response
 The following is an example of the response. 
 <!-- {
@@ -133,6 +130,7 @@ Content-type: application/json
   "@odata.context": "https://graph.microsoft.com/beta/$metadata#printJob",
   "@odata.type": "#microsoft.graph.printJob",
   "id": "44354",
+  "displayName": "testjob", 
   "createdDateTime": "2020-06-30T17:19:09Z",
   "createdBy": {
     "id": "",

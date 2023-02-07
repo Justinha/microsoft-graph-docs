@@ -1,13 +1,13 @@
 ---
 title: "reportRoot: getAttackSimulationTrainingUserCoverage"
 description: "List training coverage for users of a tenant in attack simulation and training campaigns."
-author: "Gopal-MSFT"
+author: "stuartcl"
 ms.localizationpriority: medium
 ms.prod: "reports"
 doc_type: apiPageType
 ---
 
-# reportRoot: getAttackSimulationTrainingUserCoverage
+# reportRoot: getAttackSimulationTrainingUserCoverage (deprecated)
 Namespace: microsoft.graph
 
 [!INCLUDE [beta-disclaimer](../../includes/beta-disclaimer.md)]
@@ -21,12 +21,13 @@ One of the following permissions is required to call this API. To learn more, in
 
 | Permission type                        | Permissions (from least to most privileged) |
 |:---------------------------------------|:--------------------------------------------|
-| Delegated (work or school account)     | Reports.Read.All                            |
+| Delegated (work or school account)     | AttackSimulation.Read.All                   |
 | Delegated (personal Microsoft account) | Not supported.                              |
-| Application                            | Reports.Read.All                            |
+| Application                            | AttackSimulation.Read.All                   |
 
 ## HTTP request
 
+[!INCLUDE [attacksim-deprecate-queryurl-reportapi](../includes/attacksim-deprecate-queryurl-reportapi.md)]
 <!-- {
   "blockType": "ignored"
 }
@@ -122,3 +123,5 @@ Content-Type: application/json
 }
 ```
 
+## See also
+[securityReportsRoot: getAttackSimulationTrainingUserCoverage](securityreportsroot-getattacksimulationtrainingusercoverage.md)

@@ -16,7 +16,7 @@ Update the properties of a registered device.
 Only certain properties of a device can be updated through approved Mobile Device Managment (MDM) apps.
 
 > [!IMPORTANT]
-> This API has a [known issue](/graph/known-issues#linux-based-devices-cant-be-updated-by-an-app-with-application-permissions). An app with application permissions can only update the **extensionAttributes** property for Linux-based devices, that is, where the **operationSystem** property is `linux`.
+> This API has a [known issue](/graph/known-issues#linux-based-devices-cant-be-updated-by-an-app-with-application-permissions). An app with application permissions cannot update the **extensionAttributes** property for Linux-based devices, that is, where the **operationSystem** property is `linux`.
 
 ## Permissions
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
@@ -31,10 +31,11 @@ The calling user must also be in one of the following [Azure AD roles](/azure/ac
 
 ## HTTP request
 
-The `{id}` in the request is the value of the **id** property of the device, not the **deviceId** property.
+You can address the device using either its **id** or **deviceId**.
 <!-- { "blockType": "ignored" } -->
 ```http
 PATCH /devices/{id}
+PATCH /devices(deviceId='{deviceId}')
 ```
 
 
@@ -121,7 +122,6 @@ HTTP/1.1 204 No Content
 #### Request
 
 
-
 # [HTTP](#tab/http)
 <!-- {
   "blockType": "request",
@@ -163,7 +163,6 @@ Content-type: application/json
 [!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
 
 ---
-
 
 
 #### Response

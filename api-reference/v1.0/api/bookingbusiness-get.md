@@ -52,10 +52,11 @@ If successful, this method returns a `200 OK` response code and a [bookingBusine
 The following is an example of the request.
 
 <!-- {
-  "blockType": "request"
+  "blockType": "request",
+  "sampleKeys": ["fabrikam@contoso.onmicrosoft.com"]
 }-->
 ```http
-GET https://graph.microsoft.com/v1.0/solutions/bookingBusinesses/Fabrikam@contoso.onmicrosoft.com
+GET https://graph.microsoft.com/v1.0/solutions/bookingBusinesses/fabrikam@contoso.onmicrosoft.com
 ```
 
 ### Response
@@ -80,6 +81,7 @@ Content-type: application/json
     "phone":"206-555-0100",
     "email":"manager@fabrikam.com",
     "webSiteUrl":"https://www.fabrikam.com/",
+    "languageTag": "String",
     "defaultCurrencyIso":"USD",
     "isPublished":false,
     "publicUrl":null,

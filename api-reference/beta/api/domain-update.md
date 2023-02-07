@@ -29,6 +29,14 @@ One of the following permissions is required to call this API. To learn more, in
 |Delegated (personal Microsoft account) | Not supported.    |
 |Application | Domain.ReadWrite.All |
 
+The work or school account needs to belong to one of the following roles:
+
+* Global Administrator
+* Domain Name Administrator
+* Partner Tier2 Support
+* Security Administrator
+* External Identity Provider Administrator
+
 ## HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
@@ -59,7 +67,8 @@ If successful, this method returns a `204 No Content` response code and no respo
 # [HTTP](#tab/http)
 <!-- {
   "blockType": "request",
-  "name": "update_domain"
+  "name": "update_domain",
+  "sampleKeys": ["contoso.com"]
 }-->
 ```http
 PATCH https://graph.microsoft.com/beta/domains/contoso.com

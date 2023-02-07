@@ -7,12 +7,16 @@ description: "Automatically generated file. DO NOT MODIFY"
 //THE GO SDK IS IN PREVIEW. NON-PRODUCTION USE ONLY
 graphClient := msgraphsdk.NewGraphServiceClient(requestAdapter)
 
-headers := map[string]string{
-	"ConsistencyLevel": "eventual",
-}
+headers := abstractions.NewRequestHeaders()
+headers.Add("ConsistencyLevel", "eventual")
+
+
+requestFilter := "mailEnabled eq false and securityEnabled eq true and NOT) and membershipRuleProcessingState eq 'On'"
+requestCount := true
+
 requestParameters := &graphconfig.GroupsRequestBuilderGetQueryParameters{
-	Filter: "mailEnabled eq false and securityEnabled eq true and NOT) and membershipRuleProcessingState eq 'On'",
-	Count: true,
+	Filter: &requestFilter,
+	Count: &requestCount,
 	Select: [] string {"id","membershipRule","membershipRuleProcessingState"},
 }
 configuration := &graphconfig.GroupsRequestBuilderGetRequestConfiguration{
@@ -20,7 +24,7 @@ configuration := &graphconfig.GroupsRequestBuilderGetRequestConfiguration{
 	QueryParameters: requestParameters,
 }
 
-result, err := graphClient.Groups().GetWithRequestConfigurationAndResponseHandler(configuration, nil)
+result, err := graphClient.Groups().Get(context.Background(), configuration)
 
 
 ```

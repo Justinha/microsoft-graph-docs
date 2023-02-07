@@ -19,12 +19,12 @@ One of the following permissions is required to call this API. To learn more, in
 
 | Permission type                        | Permissions (from least to most privileged)                                            |
 |:---------------------------------------|:---------------------------------------------------------------------------------------|
-| Delegated (work or school account)     | OnlineMeetings.ReadWrite                                  |
+| Delegated (work or school account)     | VirtualAppointment.ReadWrite, OnlineMeetings.ReadWrite                                  |
 | Delegated (personal Microsoft account) | Not supported.                                                                         |
-| Application                            | Not supported.
+| Application                            | VirtualAppointment.ReadWrite.All
 
 > [!NOTE]
->Virtual appointment will transition from online meeting permissions to virtual appointment permissions during the preview period. As we get closer to the transition, we'll provide additional details on the updated permission requirements and timeline.
+> Virtual appointment will transition from online meeting permissions to more specific virtual appointment permissions during the preview period. This will give developers more granular control over virtual appointment permissions. We'll provide additional details on when online meeting permissions will no longer be supported before the preview period ends.
 
 ## HTTP request
 
@@ -33,7 +33,8 @@ One of the following permissions is required to call this API. To learn more, in
 }
 -->
 ``` http
-PUT /onlineMeeting/{onlineMeetingId}/virtualAppointment 
+PUT /me/onlineMeetings/{onlineMeetingId}/virtualAppointment
+PUT /users/{userId}/onlineMeetings/{onlineMeetingId}/virtualAppointment
 ```
 
 ## Request headers
@@ -66,14 +67,18 @@ If successful, this method returns a `201 Created` response code and a [virtualA
 
 ### Request
 The following is an example of a request.
+
+# [HTTP](#tab/http)
 <!-- {
   "blockType": "request",
-  "name": "create_virtualappointment_from_"
+  "name": "create_virtualappointment_from_",
+  "sampleKeys": ["MSpkYzE3Njc0Yy04MWQ5LTRhZGItYmZi"]
 }
 -->
 ``` http
-PUT https://graph.microsoft.com/beta/onlineMeeting/MSpkYzE3Njc0Yy04MWQ5LTRhZGItYmZi/virtualAppointment
+PUT https://graph.microsoft.com/beta/me/onlineMeeting/MSpkYzE3Njc0Yy04MWQ5LTRhZGItYmZi/virtualAppointment
 Content-Type: application/json
+ETag: W/"ZfYdV7Meckeip07P//nwjAAADyI7NQ=="
 Content-length: 379
 
 {
@@ -94,6 +99,13 @@ Content-length: 379
     "externalAppointmentUrl": "https://anyschedulingsystem.com/api/appointments/MkADKnAAA="
 }
 ```
+
+# [JavaScript](#tab/javascript)
+[!INCLUDE [sample-code](../includes/snippets/javascript/create-virtualappointment-from--javascript-snippets.md)]
+[!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
+
+---
+
 
 
 ### Response

@@ -27,10 +27,12 @@ One of the following permissions is required to call this API. To learn more, in
 
 ## HTTP request
 
+You can address the device using either its **id** or **deviceId**.
 <!-- { "blockType": "ignored" } -->
 
 ```http
 GET /devices/{id | userPrincipalName}/transitiveMemberOf
+GET /devices(deviceId='{deviceId}')/transitiveMemberOf
 ```
 
 ## Optional query parameters
@@ -137,7 +139,7 @@ The following is an example of the request.
   "blockType": "ignored",
   "name": "get_count_only"
 }-->
-```msgraph-interactive
+```http
 GET https://graph.microsoft.com/v1.0/devices/{id}/transitiveMemberOf/$count
 ConsistencyLevel: eventual
 ```
@@ -166,7 +168,7 @@ The following is an example of the request.
   "blockType": "ignored",
   "name": "get_video_count"
 }-->
-```msgraph-interactive
+```http
 GET https://graph.microsoft.com/v1.0/devices/{id}/transitiveMemberOf/microsoft.graph.group?$count=true&$orderBy=displayName&$search="displayName:Video"&$select=displayName,id
 ConsistencyLevel: eventual
 ```

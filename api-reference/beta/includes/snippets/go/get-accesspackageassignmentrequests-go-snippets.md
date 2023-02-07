@@ -7,15 +7,18 @@ description: "Automatically generated file. DO NOT MODIFY"
 //THE GO SDK IS IN PREVIEW. NON-PRODUCTION USE ONLY
 graphClient := msgraphsdk.NewGraphServiceClient(requestAdapter)
 
-requestParameters := &graphconfig.AccessPackageAssignmentRequestsRequestBuilderGetQueryParameters{
+
+requestFilter := "(requestState eq 'PendingApproval')"
+
+requestParameters := &graphconfig.IdentityGovernanceEntitlementManagementAccessPackageAssignmentRequestsRequestBuilderGetQueryParameters{
 	Expand: [] string {"requestor($expand=connectedOrganization)"},
-	Filter: "(requestState eq 'PendingApproval')",
+	Filter: &requestFilter,
 }
-configuration := &graphconfig.AccessPackageAssignmentRequestsRequestBuilderGetRequestConfiguration{
+configuration := &graphconfig.IdentityGovernanceEntitlementManagementAccessPackageAssignmentRequestsRequestBuilderGetRequestConfiguration{
 	QueryParameters: requestParameters,
 }
 
-result, err := graphClient.IdentityGovernance().EntitlementManagement().AccessPackageAssignmentRequests().GetWithRequestConfigurationAndResponseHandler(configuration, nil)
+result, err := graphClient.IdentityGovernance().EntitlementManagement().AccessPackageAssignmentRequests().Get(context.Background(), configuration)
 
 
 ```

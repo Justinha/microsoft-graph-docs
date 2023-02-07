@@ -13,8 +13,14 @@ ms.prod: "microsoft-teams"
 
 
 Update a [chatMessage](../resources/chatMessage.md) object. 
-With the exception of the **policyViolation** property, all properties of a **chatMessage** can be updated in delegated permissions scenarios.
+
+All properties of a **chatMessage** can be updated in delegated permissions scenarios, 
+except for read-only properties and the **policyViolation** property.
 Only the **policyViolation** property of a **chatMessage** can be updated in application permissions scenarios.
+
+The update only works for chats where members are Microsoft Teams users. If one of the participants is using Skype, the operation will fail.
+
+This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.
 
 [!INCLUDE [teams-model-A-only-disclaimer](../../includes/teams-model-A-only-disclaimer.md)]
 
@@ -22,11 +28,21 @@ Only the **policyViolation** property of a **chatMessage** can be updated in app
 
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
 
-|Permission type      | Permissions (from least to most privileged)              |
-|:--------------------|:---------------------------------------------------------|
-|Delegated (work or school account) | Chat.ReadWrite |
-|Delegated (personal Microsoft account) | Not supported.    |
-|Application | Chat.UpdatePolicyViolation.All for a chat message.</br>ChannelMessage.UpdatePolicyViolation.All for a channel message. |
+### Permissions for channel
+| Permission type                        | Permissions (from least to most privileged) |
+|:---------------------------------------|:--------------------------------------------|
+| Delegated (work or school account)     | ChannelMessage.ReadWrite, Group.ReadWrite.All** |
+| Delegated (personal Microsoft account) | Not supported. |
+| Application                            | ChannelMessage.UpdatePolicyViolation.All, ChannelMessage.ReadWrite.All, Group.ReadWrite.All** |
+
+> **Note**: Permissions marked with ** are supported only for backward compatibility. We recommend that you update your solutions to use an alternative permission listed in the previous table and avoid using these permissions going forward.
+
+### Permissions for chat
+| Permission type                        | Permissions (from least to most privileged) |
+|:---------------------------------------|:--------------------------------------------|
+| Delegated (work or school account)     | Chat.ReadWrite |
+| Delegated (personal Microsoft account) | Not supported. |
+| Application                            | Chat.UpdatePolicyViolation.All, Chat.ReadWrite.All |
 
 ## HTTP request
 <!-- { "blockType": "ignored" } -->
@@ -65,12 +81,14 @@ specifying only the **policyViolation** property.
 
 ## Response body
 For applications that use delegated permissions:
-If successful, this method returns a `204 NoContent` response.
+If successful, this method returns a `204 No Content` response.
 
 For applications that use application permissions:
 If successful, this method returns a `200 OK` response.
 
-## Example for updating policyViolation by using application permissions
+## Examples
+
+### Example 1: Update policyViolation using application permissions
 
 #### Request
 
@@ -80,7 +98,8 @@ The following is an example of the request to update the **policyViolation** pro
 # [HTTP](#tab/http)
 <!-- {
   "blockType": "request",
-  "name": "chatMessage.PatchPolicyViolation.All"
+  "name": "chatMessage.PatchPolicyViolation.All",
+  "sampleKeys": ["e1234567-e123-4276-55555-6232b0e3a89a", "a7654321-e321-0000-0000-123b0e3a00a", "19%3Aa21b0b0c05194ebc9e30000000000f61%40thread.skype"]
 }-->
 ```http
 PATCH https://graph.microsoft.com/beta/teams/e1234567-e123-4276-55555-6232b0e3a89a/channels/a7654321-e321-0000-0000-123b0e3a00a/messages/19%3Aa21b0b0c05194ebc9e30000000000f61%40thread.skype
@@ -148,7 +167,7 @@ HTTP/1.1 200 OK
 }-->
 
 
-## Example for updating any property of a message by using delegated permissions
+### Example 2: Update any property of a message using delegated permissions
 
 #### Request
 
@@ -158,7 +177,8 @@ The following is an example of the request to update the properties on a Microso
 # [HTTP](#tab/http)
 <!-- {
   "blockType": "request",
-  "name": "patch_chatMessage_1"
+  "name": "patch_chatMessage_1",
+  "sampleKeys": ["e1234567-e123-4276-55555-6232b0e3a89a", "a7654321-e321-0000-0000-123b0e3a00a", "19%3Aa21b0b0c05194ebc9e30000000000f61%40thread.skype"]
 }-->
 
 ```http
@@ -187,7 +207,8 @@ Content-Type: application/json
   },
   "attachments": [],
   "mentions": [],
-  "reactions": []
+  "reactions": [],
+  "messageHistory": []
 }
 ```
 
@@ -230,7 +251,8 @@ Here is an example of the response.
 HTTP/1.1 204 NoContent
 ```
 
-### Request to update the mentions of a message by using delegated permissions
+### Example 3: Update the mentions of a message using delegated permissions
+#### Request
 
 The following is an example of the request to update the mentions on a Microsoft Teams channel message by using delegated permissions.
 
@@ -238,7 +260,8 @@ The following is an example of the request to update the mentions on a Microsoft
 # [HTTP](#tab/http)
 <!-- {
   "blockType": "request",
-  "name": "patch_chatMessage_2"
+  "name": "patch_chatMessage_2",
+  "sampleKeys": ["e1234567-e123-4276-55555-6232b0e3a89a", "a7654321-e321-0000-0000-123b0e3a00a", "19%3Aa21b0b0c05194ebc9e30000000000f61%40thread.skype"]
 }-->
 
 ```http
@@ -297,7 +320,8 @@ Content-Type: application/json
       }
     }
   ],
-  "reactions": []
+  "reactions": [],
+  "messageHistory": []
 }
 ```
 
@@ -340,7 +364,8 @@ Here is an example of the response.
 HTTP/1.1 204 NoContent
 ```
 
-### Request to update the content with attachments of a message by using delegated permissions
+### Example 4: Update the content with attachments of a message using delegated permissions
+#### Request
 
 The following is an example of the request to update the attachments on a Microsoft Teams channel message by using delegated permissions.
 
@@ -348,7 +373,8 @@ The following is an example of the request to update the attachments on a Micros
 # [HTTP](#tab/http)
 <!-- {
   "blockType": "request",
-  "name": "patch_chatMessage_3"
+  "name": "patch_chatMessage_3",
+  "sampleKeys": ["e1234567-e123-4276-55555-6232b0e3a89a", "a7654321-e321-0000-0000-123b0e3a00a", "19%3Aa21b0b0c05194ebc9e30000000000f61%40thread.skype"]
 }-->
 
 ```http
@@ -394,7 +420,8 @@ Content-Type: application/json
     }
   ],
   "mentions": [],
-  "reactions": []
+  "reactions": [],
+  "messageHistory": []
 }
 ```
 
@@ -437,7 +464,8 @@ Here is an example of the response.
 HTTP/1.1 204 NoContent
 ```
 
-### Request to update the reactions in a message by using delegated permissions
+### Example 5: Update the reactions in a message using delegated permissions
+#### Request
 
 The following is an example of the request to update the reactions property on a Microsoft Teams channel message by using delegated permissions.
 
@@ -446,7 +474,8 @@ The following is an example of the request to update the reactions property on a
 # [HTTP](#tab/http)
 <!-- {
   "blockType": "request",
-  "name": "patch_chatMessage_4"
+  "name": "patch_chatMessage_4",
+  "sampleKeys": ["e1234567-e123-4276-55555-6232b0e3a89a", "a7654321-e321-0000-0000-123b0e3a00a", "19%3Aa21b0b0c05194ebc9e30000000000f61%40thread.skype"]
 }-->
 
 ```http
@@ -594,6 +623,136 @@ Content-Type: application/json
           "id": "03a02232-d8f5-4970-a77e-6e8c76ce7a4e",
           "displayName": null,
           "userIdentityType": "aadUser"
+        }
+      }
+    }
+  ],
+  "messageHistory": [
+    {
+      "modifiedDateTime": "2018-10-21T08:10:30.489Z",
+      "actions": "reactionAdded",
+      "reaction": {
+        "reactionType": "angry",
+        "user": {
+          "application": null,
+          "device": null,
+          "user": {
+            "id": "f1b66449-b46d-49b0-9c3c-53c10a5c818e",
+            "displayName": null,
+            "userIdentityType": "aadUser"
+          }
+        }
+      }
+    },
+    {
+      "modifiedDateTime": "2018-10-21T08:10:32.489Z",
+      "actions": "reactionAdded",
+      "reaction": {
+        "reactionType": "laugh",
+        "user": {
+          "application": null,
+          "device": null,
+          "user": {
+            "id": "03a02232-d8f5-4970-a77e-6e8c76ce7a4e",
+            "displayName": null,
+            "userIdentityType": "aadUser"
+          }
+        }
+      }
+    },
+    {
+      "modifiedDateTime": "2018-10-21T02:17:14.67Z",
+      "actions": "reactionAdded",
+      "reaction": {
+        "reactionType": "like",
+        "user": {
+          "application": null,
+          "device": null,
+          "user": {
+            "id": "f1b66449-b46d-49b0-9c3c-53c10a5c818e",
+            "displayName": null,
+            "userIdentityType": "aadUser"
+          }
+        }
+      }
+    },
+    {
+      "modifiedDateTime": "2018-10-21T02:34:40.3Z",
+      "actions": "reactionAdded",
+      "reaction": {
+        "reactionType": "like",
+        "user": {
+          "application": null,
+          "device": null,
+          "user": {
+            "id": "4c9041b7-449a-40f7-8855-56da239b9fd1",
+            "displayName": null,
+            "userIdentityType": "aadUser"
+          }
+        }
+      }
+    },
+    {
+      "modifiedDateTime": "2018-10-21T08:10:25.489Z",
+      "actions": "reactionAdded",
+      "reaction": {
+        "reactionType": "like",
+        "user": {
+          "application": null,
+          "device": null,
+          "user": {
+            "id": "03a02232-d8f5-4970-a77e-6e8c76ce7a4e",
+            "displayName": null,
+            "userIdentityType": "aadUser"
+          }
+        }
+      }
+    },
+    {
+      "modifiedDateTime": "2018-10-21T08:10:31.489Z",
+      "actions": "reactionAdded",
+      "reaction": {
+        "reactionType": "heart",
+        "user": {
+          "application": null,
+          "device": null,
+          "user": {
+            "id": "03a02232-d8f5-4970-a77e-6e8c76ce7a4e",
+            "displayName": null,
+            "userIdentityType": "aadUser"
+          }
+        }
+      }
+    },
+    {
+      "modifiedDateTime": "2018-10-21T08:10:33.489Z",
+      "actions": "reactionAdded",
+      "reaction": {
+        "reactionType": "sad",
+        "user": {
+          "application": null,
+          "device": null,
+          "user": {
+            "id": "03a02232-d8f5-4970-a77e-6e8c76ce7a4e",
+            "displayName": null,
+            "userIdentityType": "aadUser"
+          }
+        }
+      }
+    },
+    {
+      "modifiedDateTime": "2018-10-21T08:10:34.489Z",
+      "actions": "surprised",
+      "reaction": {
+        "reactionType": "sad",
+        "user": {
+          "application": null,
+          "device": null,
+          "user": {
+            "id": "03a02232-d8f5-4970-a77e-6e8c76ce7a4e",
+            "displayName": null,
+            "userIdentityType": "aadUser"
+          }
         }
       }
     }

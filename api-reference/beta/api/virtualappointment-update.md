@@ -20,12 +20,13 @@ One of the following permissions is required to call this API. To learn more, in
 
 | Permission type                        | Permissions (from least to most privileged)                                            |
 |:---------------------------------------|:---------------------------------------------------------------------------------------|
-| Delegated (work or school account)     | OnlineMeetings.ReadWrite                                  |
+| Delegated (work or school account)     | VirtualAppointment.ReadWrite, OnlineMeetings.ReadWrite                                  |
 | Delegated (personal Microsoft account) | Not supported.                                                                         |
-| Application                            | Not supported.
+| Application                            | VirtualAppointment.ReadWrite.All
 
 > [!NOTE]
->Virtual appointment will transition from online meeting permissions to virtual appointment permissions during the preview period. As we get closer to the transition, we'll provide additional details on the updated permission requirements and timeline.
+> Virtual appointment will transition from online meeting permissions to more specific virtual appointment permissions during the preview period. This will give developers more granular control over virtual appointment permissions. We'll provide additional details on when online meeting permissions will no longer be supported before the preview period ends.
+
 
 ## HTTP request
 
@@ -34,7 +35,8 @@ One of the following permissions is required to call this API. To learn more, in
 }
 -->
 ``` http
-PATCH /onlineMeeting/{onlineMeetingId}/virtualAppointment
+PATCH /me/onlineMeetings/{onlineMeetingId}/virtualAppointment
+PATCH /users/{userId}/onlineMeetings/{onlineMeetingId}/virtualAppointment
 ```
 
 ## Request headers
@@ -66,14 +68,18 @@ If successful, this method returns a `204 No Content` response code.
 
 ### Request
 The following is an example of a request.
+
+# [HTTP](#tab/http)
 <!-- {
   "blockType": "request",
-  "name": "update_virtualappointment"
+  "name": "update_virtualappointment",
+  "sampleKeys": ["MSpkYzE3Njc0Yy04MWQ5LTRhZGItYmZi"]
 }
 -->
 ``` http
-PATCH https://graph.microsoft.com/beta/onlineMeeting/MSpkYzE3Njc0Yy04MWQ5LTRhZGItYmZi/virtualAppointment 
+PATCH https://graph.microsoft.com/beta/me/onlineMeeting/MSpkYzE3Njc0Yy04MWQ5LTRhZGItYmZi/virtualAppointment 
 Content-Type: application/json
+If-Match: W/"ZfYdV7Meckeip07P//nwjAAADyI7NQ=="
 Content-length: 379
 
 {
@@ -97,6 +103,13 @@ Content-length: 379
 }
 ```
 
+# [JavaScript](#tab/javascript)
+[!INCLUDE [sample-code](../includes/snippets/javascript/update-virtualappointment-javascript-snippets.md)]
+[!INCLUDE [sdk-documentation](../includes/snippets/snippets-sdk-documentation-link.md)]
+
+---
+
+
 
 ### Response
 The following is an example of the response.
@@ -108,3 +121,6 @@ The following is an example of the response.
 ``` http
 HTTP/1.1 204 No Content
 ```
+
+PATCH returns 412 Precondition Failed if the "If-Match" value doesn't match "ETag" in the virtual appointment.
+

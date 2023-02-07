@@ -24,7 +24,7 @@ One of the following permissions is required to call this API. To learn more, in
 |:---|:---|
 |Delegated (work or school account)|Tasks.ReadWrite|
 |Delegated (personal Microsoft account)|Tasks.ReadWrite|
-|Application|Not supported.|
+|Application|Tasks.ReadWrite.All|
 
 ## HTTP request
 
@@ -67,7 +67,8 @@ The following is an example of a request.
 # [HTTP](#tab/http)
 <!-- {
   "blockType": "request",
-  "name": "create_taskFileAttachment_from_"
+  "name": "create_taskFileAttachment_from_",
+  "sampleKeys": ["AAMkpsDRVK=", "AAKdfjhgsjhgJ="]
 }
 -->
 ``` http

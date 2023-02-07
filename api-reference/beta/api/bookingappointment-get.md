@@ -55,10 +55,11 @@ The following is an example of the request.
 # [HTTP](#tab/http)
 <!-- {
   "blockType": "request",
-  "name": "get_bookingappointment"
+  "name": "get_bookingappointment",
+  "sampleKeys": ["contosolunchdelivery@contoso.onmicrosoft.com", "AAMkADKnAAA="]
 }-->
 ```msgraph-interactive
-GET https://graph.microsoft.com/beta/bookingBusinesses/Contosolunchdelivery@contoso.onmicrosoft.com/appointments/AAMkADKnAAA=
+GET https://graph.microsoft.com/beta/bookingBusinesses/contosolunchdelivery@contoso.onmicrosoft.com/appointments/AAMkADKnAAA=
 ```
 
 # [C#](#tab/csharp)
@@ -120,12 +121,12 @@ Content-type: application/json
     "preBuffer": "PT5M",
     "postBuffer": "PT10M",
     "priceType": "fixedPrice",
-    "price": 10,
+    "price": 10.0,
     "serviceNotes": "Customer requires punctual service.",
     "optOutOfCustomerEmail": false,
-    "anonymousJoinWebUrl": "String",
+    "anonymousJoinWebUrl": null,
     "staffMemberIds": [],
-    "invoiceAmount": 10,
+    "invoiceAmount": 10.0,
     "invoiceId": "1001",
     "invoiceStatus": "open",
     "invoiceUrl": "theInvoiceUrl",

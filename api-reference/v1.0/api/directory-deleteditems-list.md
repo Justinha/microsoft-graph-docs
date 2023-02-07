@@ -11,9 +11,7 @@ doc_type: apiPageType
 
 Namespace: microsoft.graph
 
-Retrieve a list of recently deleted directory objects. Currently, this functionality is only supported for the [application](../resources/application.md), [group](../resources/group.md), and [user](../resources/user.md) resources.
-
-Currently, deleted items functionality is only supported for the [application](../resources/application.md), [servicePrincipal](../resources/serviceprincipal.md), [group](../resources/group.md), and [user](../resources/user.md) resources.
+Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the [application](../resources/application.md), [servicePrincipal](../resources/serviceprincipal.md), [group](../resources/group.md), [administrative unit](../resources/administrativeunit.md), and [user](../resources/user.md) resources.
 
 >**Note:** Deleted security groups are deleted permanently and can't be retrieved through this API.
 
@@ -47,6 +45,14 @@ One of the following permissions is required to call this API. To learn more, in
 |Delegated (personal Microsoft account) | Not supported.    |
 |Application | Group.Read.All, Group.ReadWrite.All, Directory.Read.All |
 
+### For administrative units:
+
+|Permission type      | Permissions (from least to most privileged)              |
+|:--------------------|:---------------------------------------------------------|
+|Delegated (work or school account) | AdministrativeUnit.Read.All, AdministrativeUnit.ReadWrite.All |
+|Delegated (personal Microsoft account) | Not supported.    |
+|Application | AdministrativeUnit.Read.All, AdministrativeUnit.ReadWrite.All |
+
 ## HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http 
@@ -54,17 +60,17 @@ GET /directory/deleteditems/microsoft.graph.application
 GET /directory/deleteditems/microsoft.graph.servicePrincipal
 GET /directory/deletedItems/microsoft.graph.group
 GET /directory/deletedItems/microsoft.graph.user
-GET /directory/deletedItems/microsoft.graph.device
+GET /directory/deletedItems/microsoft.graph.administrativeUnit
 ```
 
-This API currently supports retrieving object types of applications (`microsoft.graph.application`), servicePrincipals (`microsoft.graph.serviceprincipal`), groups (`microsoft.graph.group`), or users (`microsoft.graph.user`) from deleted items. The OData cast type is a required part of the URI and calling `GET /directory/deleteditems` without a type is **not** supported.
+The OData cast type is a required part of the URI and calling `GET /directory/deleteditems` without a type is **not** supported.
 
 ## Optional query parameters
 
 This method supports the query parameters that are supported by the resource that is specified by the OData cast. That is, `$count`, `$expand`, `$filter`, `$orderBy`, `$search`, `$select`, and `$top` query parameters. Some queries are supported only when you use the **ConsistencyLevel** header set to `eventual` and `$count`. For example:
 
-```msgraph-interactive
-https://graph.microsoft.com/beta/directory/deletedItems/microsoft.graph.group?&$count=true&$orderBy=deletedDateTime desc&$select=id,displayName,deletedDateTime
+```http
+GET https://graph.microsoft.com/beta/directory/deletedItems/microsoft.graph.group?&$count=true&$orderBy=deletedDateTime desc&$select=id,displayName,deletedDateTime
 ConsistencyLevel: eventual
 ```
 

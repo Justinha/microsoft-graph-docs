@@ -26,6 +26,13 @@ One of the following permissions is required to call this API. To learn more, in
 |Delegated (personal Microsoft account) | Not supported.    |
 |Application | Domain.Read.All, Domain.ReadWrite.All |
 
+The work or school account needs to belong to one of the following roles:
+
+* Global Administrator
+* Domain Name Administrator
+* Partner Tier2 Support
+* Global Reader
+
 [!INCLUDE [limited-info](../../includes/limited-info.md)]
 
 ## HTTP request
@@ -59,7 +66,8 @@ If successful, this method returns a `200 OK` response code and collection of [d
 # [HTTP](#tab/http)
 <!-- {
   "blockType": "request",
-  "name": "get_domainnamereferences"
+  "name": "get_domainnamereferences",
+  "sampleKeys": ["contoso.com"]
 }-->
 ```msgraph-interactive
 GET https://graph.microsoft.com/beta/domains/contoso.com/domainNameReferences

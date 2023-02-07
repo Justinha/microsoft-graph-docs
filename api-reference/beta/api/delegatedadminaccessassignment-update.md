@@ -52,7 +52,7 @@ PATCH /tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationsh
 
 If successful, this method returns a `200 OK` or a `202 Accepted` response code.
 
-## Response headers
+### Response headers
 |Name|Description|
 |:---|:---|
 |Content-Type|application/json.|
@@ -69,7 +69,8 @@ This method typically returns a `202 Accepted` response code with a URL to a lon
 <!-- {
   "blockType": "request",
   "name": "update_delegatedadminaccessassignment",
-  "@odata.type": "microsoft.graph.delegatedAdminAccessAssignment"
+  "@odata.type": "microsoft.graph.delegatedAdminAccessAssignment",
+  "sampleKeys": ["5e5594d3-6f82-458b-b567-77db4811f0cd-00000000-0000-0000-0000-000000001234", "a9d6cf90-083a-47dc-ace2-1da98be3f344"]
 }
 -->
 ``` http

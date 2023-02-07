@@ -7,14 +7,17 @@ description: "Automatically generated file. DO NOT MODIFY"
 //THE GO SDK IS IN PREVIEW. NON-PRODUCTION USE ONLY
 graphClient := msgraphsdk.NewGraphServiceClient(requestAdapter)
 
-requestParameters := &graphconfig.RiskDetectionsRequestBuilderGetQueryParameters{
-	Filter: "riskEventType eq 'unfamiliarFeatures' or riskLevel eq 'medium'",
+
+requestFilter := "riskEventType eq 'unfamiliarFeatures' or riskLevel eq 'medium'"
+
+requestParameters := &graphconfig.IdentityProtectionRiskDetectionsRequestBuilderGetQueryParameters{
+	Filter: &requestFilter,
 }
-configuration := &graphconfig.RiskDetectionsRequestBuilderGetRequestConfiguration{
+configuration := &graphconfig.IdentityProtectionRiskDetectionsRequestBuilderGetRequestConfiguration{
 	QueryParameters: requestParameters,
 }
 
-result, err := graphClient.IdentityProtection().RiskDetections().GetWithRequestConfigurationAndResponseHandler(configuration, nil)
+result, err := graphClient.IdentityProtection().RiskDetections().Get(context.Background(), configuration)
 
 
 ```

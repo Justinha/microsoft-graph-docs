@@ -7,15 +7,18 @@ description: "Automatically generated file. DO NOT MODIFY"
 //THE GO SDK IS IN PREVIEW. NON-PRODUCTION USE ONLY
 graphClient := msgraphsdk.NewGraphServiceClient(requestAdapter)
 
-requestParameters := &graphconfig.RoleAssignmentsRequestBuilderGetQueryParameters{
-	Filter: "appScopeId eq '/AccessPackageCatalog/4cee616b-fdf9-4890-9d10-955e0ccb12bc'",
+
+requestFilter := "appScopeId eq '/AccessPackageCatalog/4cee616b-fdf9-4890-9d10-955e0ccb12bc'"
+
+requestParameters := &graphconfig.RoleManagementEntitlementManagementRoleAssignmentsRequestBuilderGetQueryParameters{
+	Filter: &requestFilter,
 	Expand: [] string {"principal"},
 }
-configuration := &graphconfig.RoleAssignmentsRequestBuilderGetRequestConfiguration{
+configuration := &graphconfig.RoleManagementEntitlementManagementRoleAssignmentsRequestBuilderGetRequestConfiguration{
 	QueryParameters: requestParameters,
 }
 
-result, err := graphClient.RoleManagement().EntitlementManagement().RoleAssignments().GetWithRequestConfigurationAndResponseHandler(configuration, nil)
+result, err := graphClient.RoleManagement().EntitlementManagement().RoleAssignments().Get(context.Background(), configuration)
 
 
 ```

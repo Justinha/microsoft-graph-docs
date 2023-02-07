@@ -23,12 +23,12 @@ Represents information about a virtual appointment, including the client join UR
 |:---|:---|:---|
 |[Create virtualAppointment](../api/virtualappointment-put.md)|[virtualAppointment](../resources/virtualappointment.md)|Create a new [virtualAppointment](../resources/virtualappointment.md) object.|
 |[Get virtualAppointment](../api/virtualappointment-get.md)|[virtualAppointment](../resources/virtualappointment.md)|Read the properties and relationships of a [virtualAppointment](../resources/virtualappointment.md) object.|
-|[Update virtualAppointment](../api/virtualappointment-update.md)|[virtualAppointment](../resources/virtualappointment.md)|Update the properties of a [virtualAppointment](../resources/virtualappointment.md) object.|
+|[Update virtualAppointment](../api/virtualappointment-update.md)|None|Update the properties of a [virtualAppointment](../resources/virtualappointment.md) object.|
 |[Delete virtualAppointment](../api/virtualappointment-delete.md)|None|Delete a [virtualAppointment](../resources/virtualappointment.md) object.|
 
 > [!TIP]
 >
-> When you create a virtual appointment resource for the first time in a tenant, the request returns a `503 Service Unavailable` response code with a retry header that indicates how long a caller should wait before making the request again. The service provisioning takes less than five minutes. This step is only required once per customer tenant.
+> When you create a virtual appointment resource for the first time in a tenant, the request returns a `409 Conflict` response code with a retry header that indicates how long a caller should wait before making the request again. The service provisioning takes less than five minutes. This step is only required once per customer tenant.
 
 ## Properties
 |Property|Type|Description|

@@ -7,14 +7,17 @@ description: "Automatically generated file. DO NOT MODIFY"
 //THE GO SDK IS IN PREVIEW. NON-PRODUCTION USE ONLY
 graphClient := msgraphsdk.NewGraphServiceClient(requestAdapter)
 
-requestParameters := &graphconfig.BookingBusinessesRequestBuilderGetQueryParameters{
-	Query: "Adventure",
+
+requestQuery := "Adventure"
+
+requestParameters := &graphconfig.SolutionsBookingBusinessesRequestBuilderGetQueryParameters{
+	Query: &requestQuery,
 }
-configuration := &graphconfig.BookingBusinessesRequestBuilderGetRequestConfiguration{
+configuration := &graphconfig.SolutionsBookingBusinessesRequestBuilderGetRequestConfiguration{
 	QueryParameters: requestParameters,
 }
 
-result, err := graphClient.Solutions().BookingBusinesses().GetWithRequestConfigurationAndResponseHandler(configuration, nil)
+result, err := graphClient.Solutions().BookingBusinesses().Get(context.Background(), configuration)
 
 
 ```

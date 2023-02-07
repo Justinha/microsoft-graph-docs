@@ -45,6 +45,10 @@ GET /users/{userId}/onlineMeetings/{meetingId}/attendanceReports/{reportId}
 >- `meetingId` is the **id** of an [onlineMeeting](../resources/onlinemeeting.md) object.
 >- `reportId` is the **id** of an [meetingAttendanceReport](../resources/meetingAttendanceReport.md) object.
 
+> [!CAUTION]
+>
+>- The **attendanceRecords** property does not return information about a breakout room.
+
 ## Optional query parameters
 
 This method supports the [OData query parameters](/graph/query-parameters) to help customize the response.
@@ -76,7 +80,8 @@ The following example shows how to get the attendance report for an online meeti
 # [HTTP](#tab/http)
 <!-- {
   "blockType": "request",
-  "name": "get-attendanceReport-by-id"
+  "name": "get-attendanceReport-by-id",
+  "sampleKeys": ["MSpkYzE3Njc0Yy04MWQ5LTRhZGItYmZ", "c9b6db1c-d5eb-427d-a5c0-20088d9b22d7"]
 }-->
 
 ```msgraph-interactive
