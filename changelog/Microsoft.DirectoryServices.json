@@ -3,14 +3,6 @@
     {
       "ChangeList": [
         {
-          "Id": "3d520f33-5903-4f2f-8827-303af9b98c9d",
-          "ApiChange": "Property",
-          "ChangedApiName": "assignedLicense",
-          "ChangeType": "Change",
-          "Description": "Revised the least privileged options for delegated accounts and applications for [user: assignLicense](https://learn.microsoft.com/en-us/graph/api/user-assignlicense?view=graph-rest-1.0).",
-          "Target": "crossTenantAccessPolicyConfigurationDefault"
-        },
-        {
           "Id": "b93829d7-509b-43bf-9ff7-b9a17032bae6",
           "ApiChange": "Property",
           "ChangedApiName": "automaticUserConsentSettings",
@@ -12599,6 +12591,24 @@
         }
       ],
       "Id": "c3294a8d-9146-4edf-ba58-039a22f3d38c",
+      "Cloud": "Prod",
+      "Version": "v1.0",
+      "CreatedDateTime": "2023-01-30T17:56:44.238139Z",
+      "WorkloadArea": "Identity and access",
+      "SubArea": "Directory management"
+    },
+    {
+      "ChangeList": [
+        {
+          "Id": "993b0f54-0e49-4dbc-8508-aec3aae09c3c",
+          "ApiChange": "Permission",
+          "ChangedApiName": "assignLicense",
+          "ChangeType": "Change",
+          "Description": "Changed value of least privileged option.",
+          "Target": "user"
+        }
+      ],
+      "Id": "993b0f54-0e49-4dbc-8508-aec3aae09c3c",
       "Cloud": "Prod",
       "Version": "v1.0",
       "CreatedDateTime": "2023-01-30T17:56:44.238139Z",
